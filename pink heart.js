@@ -151,13 +151,13 @@ var ParticlePool = (function () {
   ParticlePool.prototype.draw = function (context, image) {
     // draw active particles
     if (firstActive < firstFree) {
-      for (i = firstActive; i < firstFree; i++)
+      for (var i = firstActive; i < firstFree; i++)
         particles[i].draw(context, image);
     }
     if (firstFree < firstActive) {
-      for (i = firstActive; i < particles.length; i++)
+      for (var i = firstActive; i < particles.length; i++)
         particles[i].draw(context, image);
-      for (i = 0; i < firstFree; i++) particles[i].draw(context, image);
+      for (var i = 0; i < firstFree; i++) particles[i].draw(context, image);
     }
   };
   return ParticlePool;
